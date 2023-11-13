@@ -1,1 +1,31 @@
-# ambicagolyala.github.io
+# A deep-dive into the mathematics of Neural Field Theory
+There are several aspects to our modelling initiatives, which can be generalised under the following three sections
+#
+Synaptodendritic dynamics and the soma potential
+
+Assuming the brain contains multiple populations of neurons (indexed by subscript a), then the soma potential 𝑉_𝑎 is the sum of contributions, 𝑉_𝑎𝑏, arriving as a result of activity of each type of dendritic synapse 𝑏. Subpotentials, 𝑉_𝑎𝑏, respond in different ways to incoming spikes, depending on their synaptic dynamics (ion-channel kinetics, diffusion in the synaptic cleft, etc) and on ensuing signal dispersion in the dendrites.
+
+The soma response to an input is approximated via the differential equation
+
+$D_{a b}(r, t) V_{a b}(r, t)=v_{a b} \phi_{a b}\left(r, t-\tau_{a b}\right), \text { with }$
+$D_{a b}(r, t)=\frac{1}{\alpha \beta} \frac{d^2}{d t^2}+\left[\frac{1}{\alpha}+\frac{1}{\beta}\right] \frac{d}{d t}+1$
+#
+Pulse generation
+
+In cells with voltage-gated ion channels, action potentials are produced at the axon hillock when the soma potential exceeds some threshold 𝜃_𝑎. When averaged over a population of neurons, with normal response characteristics, we approximate the firing rate, 𝑄, 
+$$Q_a(r, t)=Q_{\max } S_a\left[V_a(r, t)\right]$$
+Where 𝑆_𝑎 is a monotonic increasing sigmoidal function that approaches zero as 𝑉_𝑎→−∞
+And 1 as 𝑉_𝑎→∞. A commonly used approximation is
+
+$$S_a\left[V_a(r, t)\right]=\frac{1}{1+\exp \left[-\left\{V_a(r, t)-\theta_a(r, t)\right\} / \sigma_a(r, t)\right]}$$
+
+#
+Axonal Propagation
+
+Spatiotemporal propagation of pulses within and between populations determines the values of 𝜙_𝑎𝑏. 𝜙_𝑎𝑏 can be expressed in terms of firing rate at other locations and earlier times. If we assume linear propagation, signals propagate according to the following equation:
+
+
+$$\left[\frac{1}{\gamma^2} \frac{\partial}{\partial t^2}+\frac{2}{\gamma_{a b}} \frac{\partial}{\partial t}+1-r_{a b}^2 \nabla^2\right] \phi_{a b}(r, t)=Q_b(r, t)$$
+
+Employing population-specific fields and parameters allows each population to generate a family of outgoing fields that propagate to different populations in different ways.
+
