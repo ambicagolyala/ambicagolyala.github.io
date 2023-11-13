@@ -1,3 +1,14 @@
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['\\(','\\)'], ['$', '$']]
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 # A deep-dive into the mathematics of Neural Field Theory
 There are several aspects to our modelling initiatives, which can be generalised under the following three sections
 #
@@ -7,7 +18,7 @@ Assuming the brain contains multiple populations of neurons (indexed by subscrip
 
 The soma response to an input is approximated via the differential equation
 
-$D_{a b}(r, t) V_{a b}(r, t)=v_{a b} \phi_{a b}\left(r, t-\tau_{a b}\right), \text { with }$
+\\(D_{a b}(r, t) V_{a b}(r, t)=v_{a b} \phi_{a b}\left(r, t-\tau_{a b}\right), \text { with }\\)
 $D_{a b}(r, t)=\frac{1}{\alpha \beta} \frac{d^2}{d t^2}+\left[\frac{1}{\alpha}+\frac{1}{\beta}\right] \frac{d}{d t}+1$
 #
 Pulse generation
